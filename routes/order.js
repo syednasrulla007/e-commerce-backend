@@ -1,4 +1,4 @@
-const { AddOrders, getOrders, incOrders, checkout } = require('../Controllers/orderContoller')
+const { AddOrders, getOrders, incOrders, checkout,deleteall } = require('../Controllers/orderContoller')
 
 const router = require('express').Router()
 
@@ -9,5 +9,7 @@ router.post('/getorder',getOrders)
 router.put('/order',incOrders)
 
 router.put('/checkout',checkout)
+
+router.put('/deleteall',deleteall)
 
 module.exports = router
