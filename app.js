@@ -17,7 +17,7 @@ app.use('/',user)
 app.use('/',product) 
 app.use('/',order) 
 app.use('/',auth) 
-app.use('/',payment) 
+
 
 
 app.listen(PORT,()=>{
