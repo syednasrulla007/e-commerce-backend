@@ -75,6 +75,18 @@ const getOrders = async(req,res) =>{
         console.log(err)
     }
 } 
+const deleteall = async (req, res)=>{
+    // console.log(req.body)
+    
+    const user = await User.findOne({_id:req.body.userId})
+    
+    user.cart=[]
+    await user.save();
+    // console.log(user)
+    
+    return res.json({status:"ok"})
+   
+}
 
 const incOrders = async(req,res)=>{
     const {order,type} = req.body.data
@@ -167,4 +179,4 @@ const checkout =async(req,res)=>{
 
 }
 
-module.exports = {AddOrders,getOrders,incOrders,checkout}
+module.exports = {AddOrders,getOrders,incOrders,checkout,deleteall}
