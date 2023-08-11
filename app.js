@@ -9,7 +9,7 @@ const user = require('./routes/user')
 const product = require('./routes/product')
 const order = require('./routes/order')
 const auth = require('./routes/auth')
-const payment = require('./routes/payment')
+
 
 app.use(express.json())
 app.use(cors({origin:'*'}))
