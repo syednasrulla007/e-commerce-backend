@@ -75,18 +75,35 @@ const getOrders = async(req,res) =>{
         console.log(err)
     }
 } 
-const deleteall = async (req, res)=>{
-    // console.log(req.body)
-    
-    const user = await User.findOne({_id:req.body.userId})
-    
-    user.cart=[]
-    await user.save();
-    // console.log(user)
-    
-    return res.json({status:"ok"})
-   
+const deleteall = async(req,res)=>{
+    const token = req.body.token
+    try{
+        if(token === null){
+            res.send('Not Logged In')
+        }
+        else{
+            jwt.verify(token,process.env.SECKEY,async (err,details)=>{
+                if(err){
+                    console.log(err)
+                }
+                else{
+                    const Checkname = await OrderModel.findOne({name:details.name})
+                    
+                    // console.log(Checkname)
+                    if(Checkname === null){
+                        res.send('User does not present ')
+                    }
+                    else{
+                        OrderModel=[]
+                         OrderModel.save()
+                    }
+                }
+            })}
+    }
+    catch(err){
+        console.log(err)
 }
+};
 
 const incOrders = async(req,res)=>{
     const {order,type} = req.body.data
