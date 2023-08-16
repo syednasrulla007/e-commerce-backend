@@ -1,4 +1,4 @@
-const { AddOrders, getOrders, incOrders, checkout,deleteall } = require('../Controllers/orderContoller')
+const { AddOrders, getOrders, incOrders, checkout } = require('../Controllers/orderContoller')
 
 const router = require('express').Router()
 
