@@ -196,4 +196,5 @@ const checkout =async(req,res)=>{
 
 }
 
-module.exports = {AddOrders,getOrders,incOrders,checkout,deleteall}
+module.exports = {AddOrders,getOrders,incOrders,checkout}
+// module.exports={deleteall}
