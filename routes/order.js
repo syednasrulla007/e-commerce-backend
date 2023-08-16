@@ -10,6 +10,6 @@ router.put('/order',incOrders)
 
 router.put('/checkout',checkout)
 
-router.put('/deleteall',deleteall)
+// router.delete('/deleteall',deleteall)
 
 module.exports = router
